@@ -1,0 +1,32 @@
+{
+  "Kernal": {
+    "username": "Kernal",
+    "trustScore": 0,
+    "interactions": [
+      "17:34:47: attacked me",
+      "17:34:55: attacked me",
+      "17:34:56: attacked me",
+      "17:34:56: attacked me",
+      "17:34:59: attacked me",
+      "18:04:50: attacked me",
+      "18:07:28: attacked me"
+    ],
+    "lastSeen": 1774375648270,
+    "gaveMeItems": [],
+    "attackedMe": true,
+    "chatCount": 0
+  },
+  "DriveBackupV2": {
+    "username": "DriveBackupV2",
+    "trustScore": 0.73,
+    "interactions": [
+      "17:42:12: said: Creating backups, the server m",
+      "17:56:58: said: Backup complete",
+      "17:56:58: said: The next backup is in 45 minut"
+    ],
+    "lastSeen": 1774375018096,
+    "gaveMeItems": [],
+    "attackedMe": false,
+    "chatCount": 3
+  }
+}

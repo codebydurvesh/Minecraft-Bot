@@ -2,14 +2,1176 @@
   "version": 2,
   "entries": [
     {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 28,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "spider"
+      ],
+      "timestamp": 1774373685022
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 13,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "spider"
+      ],
+      "timestamp": 1774373685578
+    },
+    {
       "goal": "gather",
       "target": "wood",
       "success": false,
-      "duration": 48604,
+      "duration": 73931,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "zombie",
+        "skeleton",
+        "skeleton",
+        "zombie",
+        "spider",
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774373760012
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 12,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "zombie",
+        "skeleton",
+        "skeleton",
+        "zombie",
+        "spider",
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774373760528
+    },
+    {
+      "goal": "gather",
+      "target": "wood",
+      "success": false,
+      "duration": 48054,
       "gained": {},
       "timeOfDay": "day",
-      "nearbyThreats": [],
-      "timestamp": 1774371928634
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton",
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774373809082
+    },
+    {
+      "goal": "gather",
+      "target": "wood",
+      "success": false,
+      "duration": 48056,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774373857641
+    },
+    {
+      "goal": "explore",
+      "target": "village",
+      "success": true,
+      "duration": 60099,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774373921376
+    },
+    {
+      "goal": "explore",
+      "target": "village",
+      "success": true,
+      "duration": 60099,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774373982887
+    },
+    {
+      "goal": "gather",
+      "target": "wood",
+      "success": false,
+      "duration": 48043,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374031431
+    },
+    {
+      "goal": "gather",
+      "target": "wood",
+      "success": false,
+      "duration": 48048,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "zombie",
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374079982
+    },
+    {
+      "goal": "gather",
+      "target": "wood",
+      "success": false,
+      "duration": 48047,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374128529
+    },
+    {
+      "goal": "build",
+      "target": "shelter",
+      "success": false,
+      "duration": 5,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374130015
+    },
+    {
+      "goal": "explore",
+      "target": "village",
+      "success": true,
+      "duration": 60107,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374190625
+    },
+    {
+      "goal": "build",
+      "target": "shelter",
+      "success": false,
+      "duration": 3,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374192546
+    },
+    {
+      "goal": "explore",
+      "target": "village",
+      "success": true,
+      "duration": 60108,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374253155
+    },
+    {
+      "goal": "gather",
+      "target": "wood",
+      "success": false,
+      "duration": 48064,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374301721
+    },
+    {
+      "goal": "gather",
+      "target": "wood",
+      "success": false,
+      "duration": 48064,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton",
+        "skeleton",
+        "creeper"
+      ],
+      "timestamp": 1774374350288
+    },
+    {
+      "goal": "gather",
+      "target": "wood",
+      "success": false,
+      "duration": 48065,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374398855
+    },
+    {
+      "goal": "build",
+      "target": "shelter",
+      "success": false,
+      "duration": 12,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374401198
+    },
+    {
+      "goal": "explore",
+      "target": "village",
+      "success": true,
+      "duration": 60105,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774374461807
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 13,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774374462322
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 7,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774374462831
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 9,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774374463342
+    },
+    {
+      "goal": "explore",
+      "target": "village",
+      "success": true,
+      "duration": 60086,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton",
+        "creeper",
+        "zombie"
+      ],
+      "timestamp": 1774374524892
+    },
+    {
+      "goal": "social",
+      "target": "greet",
+      "success": false,
+      "duration": 2,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton",
+        "creeper",
+        "zombie"
+      ],
+      "timestamp": 1774374526223
+    },
+    {
+      "goal": "gather",
+      "target": "wood",
+      "success": false,
+      "duration": 48036,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton",
+        "creeper"
+      ],
+      "timestamp": 1774374574761
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 9,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton",
+        "creeper"
+      ],
+      "timestamp": 1774374575270
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 4,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton",
+        "creeper"
+      ],
+      "timestamp": 1774374575775
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 11,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton",
+        "creeper"
+      ],
+      "timestamp": 1774374576287
+    },
+    {
+      "goal": "gather",
+      "target": "wood",
+      "success": false,
+      "duration": 48054,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton",
+        "skeleton",
+        "creeper"
+      ],
+      "timestamp": 1774374625671
+    },
+    {
+      "goal": "gather",
+      "target": "wood",
+      "success": false,
+      "duration": 48046,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton",
+        "creeper"
+      ],
+      "timestamp": 1774374675098
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 3,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton",
+        "creeper"
+      ],
+      "timestamp": 1774374675681
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 5,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton",
+        "creeper"
+      ],
+      "timestamp": 1774374676189
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 3,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton",
+        "creeper"
+      ],
+      "timestamp": 1774374676693
+    },
+    {
+      "goal": "explore",
+      "target": "village",
+      "success": true,
+      "duration": 60099,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374738077
+    },
+    {
+      "goal": "explore",
+      "target": "village",
+      "success": true,
+      "duration": 60228,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374799636
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 16,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374800156
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 8,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374800664
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 8,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374801173
+    },
+    {
+      "goal": "gather",
+      "target": "wood",
+      "success": false,
+      "duration": 48093,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774374850835
+    },
+    {
+      "goal": "build",
+      "target": "shelter",
+      "success": false,
+      "duration": 4,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774374852271
+    },
+    {
+      "goal": "gather",
+      "target": "wood",
+      "success": false,
+      "duration": 48100,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374901002
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 13,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374901516
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 4,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374902021
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 10,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774374902533
+    },
+    {
+      "goal": "gather",
+      "target": "wood",
+      "success": false,
+      "duration": 48067,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774374951975
+    },
+    {
+      "goal": "explore",
+      "target": "village",
+      "success": true,
+      "duration": 60135,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375013463
+    },
+    {
+      "goal": "explore",
+      "target": "village",
+      "success": true,
+      "duration": 60104,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375075070
+    },
+    {
+      "goal": "gather",
+      "target": "wood",
+      "success": false,
+      "duration": 48060,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375123634
+    },
+    {
+      "goal": "craft",
+      "target": "wooden_pickaxe",
+      "success": false,
+      "duration": 11,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375196804
+    },
+    {
+      "goal": "craft",
+      "target": "wooden_pickaxe",
+      "success": false,
+      "duration": 2,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375197383
+    },
+    {
+      "goal": "craft",
+      "target": "wooden_pickaxe",
+      "success": false,
+      "duration": 8,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375197892
+    },
+    {
+      "goal": "craft",
+      "target": "wooden_pickaxe",
+      "success": false,
+      "duration": 12,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375235121
+    },
+    {
+      "goal": "craft",
+      "target": "wooden_pickaxe",
+      "success": false,
+      "duration": 2,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375235717
+    },
+    {
+      "goal": "craft",
+      "target": "wooden_pickaxe",
+      "success": false,
+      "duration": 11,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375236231
+    },
+    {
+      "goal": "gather",
+      "target": "wood",
+      "success": false,
+      "duration": 48053,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375284785
+    },
+    {
+      "goal": "craft",
+      "target": "wooden_sword",
+      "success": false,
+      "duration": 4,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375285298
+    },
+    {
+      "goal": "build",
+      "target": "shelter",
+      "success": false,
+      "duration": 4,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375288038
+    },
+    {
+      "goal": "explore",
+      "target": "village",
+      "success": true,
+      "duration": 60184,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375348728
+    },
+    {
+      "goal": "craft",
+      "target": "wooden_pickaxe",
+      "success": false,
+      "duration": 30014,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375379245
+    },
+    {
+      "goal": "craft",
+      "target": "wooden_pickaxe",
+      "success": false,
+      "duration": 14,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375379761
+    },
+    {
+      "goal": "craft",
+      "target": "wooden_pickaxe",
+      "success": false,
+      "duration": 11,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375380274
+    },
+    {
+      "goal": "build",
+      "target": "shelter",
+      "success": false,
+      "duration": 2,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375381762
+    },
+    {
+      "goal": "explore",
+      "target": "village",
+      "success": true,
+      "duration": 60128,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375442393
+    },
+    {
+      "goal": "build",
+      "target": "shelter",
+      "success": false,
+      "duration": 4,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375444118
+    },
+    {
+      "goal": "explore",
+      "target": "village",
+      "success": true,
+      "duration": 60128,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375504748
+    },
+    {
+      "goal": "craft",
+      "target": "wooden_pickaxe",
+      "success": false,
+      "duration": 8,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375505259
+    },
+    {
+      "goal": "craft",
+      "target": "wooden_pickaxe",
+      "success": false,
+      "duration": 5,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375505766
+    },
+    {
+      "goal": "craft",
+      "target": "wooden_pickaxe",
+      "success": false,
+      "duration": 26,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375506294
+    },
+    {
+      "goal": "build",
+      "target": "shelter",
+      "success": false,
+      "duration": 3,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375507819
+    },
+    {
+      "goal": "explore",
+      "target": "village",
+      "success": true,
+      "duration": 60107,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774375568430
+    },
+    {
+      "goal": "build",
+      "target": "shelter",
+      "success": false,
+      "duration": 4,
+      "gained": {},
+      "timeOfDay": "day",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774375570309
+    },
+    {
+      "goal": "explore",
+      "target": "village",
+      "success": true,
+      "duration": 60122,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375630935
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 12,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375631451
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 8,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375631960
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 10,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375632472
+    },
+    {
+      "goal": "explore",
+      "target": "village",
+      "success": true,
+      "duration": 60091,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375694008
+    },
+    {
+      "goal": "explore",
+      "target": "village",
+      "success": true,
+      "duration": 60097,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774375755818
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 4,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774375756323
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 11,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "zombie",
+        "skeleton"
+      ],
+      "timestamp": 1774375756835
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 4,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "zombie",
+        "skeleton"
+      ],
+      "timestamp": 1774375757340
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 12,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774375819385
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 3,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774375819985
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 9,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "skeleton"
+      ],
+      "timestamp": 1774375820496
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 8,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375849736
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 3,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375850339
+    },
+    {
+      "goal": "survive",
+      "target": "sleep",
+      "success": false,
+      "duration": 8,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375850849
+    },
+    {
+      "goal": "gather",
+      "target": "wood",
+      "success": false,
+      "duration": 48073,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton",
+        "spider"
+      ],
+      "timestamp": 1774375899424
+    },
+    {
+      "goal": "craft",
+      "target": "wooden_pickaxe",
+      "success": false,
+      "duration": 12,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375899940
+    },
+    {
+      "goal": "craft",
+      "target": "wooden_axe",
+      "success": false,
+      "duration": 4,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375900444
+    },
+    {
+      "goal": "craft",
+      "target": "wooden_sword",
+      "success": false,
+      "duration": 10,
+      "gained": {},
+      "timeOfDay": "night",
+      "nearbyThreats": [
+        "skeleton"
+      ],
+      "timestamp": 1774375900955
     }
   ]
 }

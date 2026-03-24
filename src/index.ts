@@ -44,39 +44,47 @@ async function main() {
   const executor = new Executor(bot, learning, trust, world);
 
   let running = false;
-  let busy    = false;
+  // FIX: split busy into two flags — one for emergency, one for goal loop
+  // This prevents emergency checks from blocking the goal loop and vice versa
+  let emergencyBusy = false;
+  let goalBusy      = false;
 
   bot.once('spawn', () => {
     running = true;
 
     // ─── Safety loop (1s) — emergency checks ──────────────────────────────
     setInterval(async () => {
-      if (!running || busy) return;
+      if (!running || emergencyBusy || goalBusy) return;
       world.scan(bot);
       const emergency = executor.emergency();
-      if (emergency) {
-        busy = true;
+      if (!emergency) return;
+
+      emergencyBusy = true;
+      // FIX: try/finally so busy is ALWAYS reset even if executor.run throws
+      try {
         const result = await executor.run(emergency);
         brain.recordOutcome(emergency.goal, emergency.target, result.success, result.reason);
-        busy = false;
+      } catch (e: any) {
+        log.error(`Emergency error: ${e.message}`);
+      } finally {
+        emergencyBusy = false;
       }
     }, cfg.safetyTickMs);
 
     // ─── Look around behaviors ────────────────────────────────────────────
     setInterval(async () => {
-      if (!running || busy) return;
+      if (!running || goalBusy) return;
       try { await lookAtNearestPlayer(bot, 12); } catch {}
     }, 3000);
 
     setInterval(async () => {
-      if (!running || busy) return;
+      if (!running || goalBusy) return;
       try { await lookAround(bot); } catch {}
     }, 8000);
 
     // ─── Auto-equip armor when inventory changes ──────────────────────────
     bot.inventory.on('updateSlot' as any, async () => {
-      if (busy) return;
-      // Check if we have unequipped armor pieces
+      if (goalBusy) return;
       const mcData = require('minecraft-data')(bot.version);
       const ARMOUR_SLOTS: Array<{ slot: number; names: string[] }> = [
         { slot: 5, names: ['helmet'] },
@@ -104,8 +112,11 @@ async function main() {
     // ─── Event-driven goal loop ───────────────────────────────────────────
     async function goalLoop() {
       while (running) {
-        if (busy) { await sleep(500); continue; }
-        busy = true;
+        // FIX: wait for emergency to clear too, and use shorter sleep
+        if (goalBusy || emergencyBusy) { await sleep(200); continue; }
+
+        goalBusy = true;
+        // FIX: try/finally so goalBusy is ALWAYS reset — this was the main freeze bug
         try {
           const goal = await brain.pickGoal();
           proactiveChat(bot, `${goal.goal}_${goal.target}`);
@@ -113,13 +124,15 @@ async function main() {
           brain.recordOutcome(goal.goal, goal.target, result.success, result.reason);
         } catch (e: any) {
           log.error(`Goal error: ${e.message}`);
+        } finally {
+          goalBusy = false;
         }
-        busy = false;
-        await sleep(800);
+        await sleep(500);
       }
     }
 
-    setTimeout(() => goalLoop(), 4000);
+    // FIX: reduced initial delay from 4000ms to 1500ms — bot was idle for 4s on spawn
+    setTimeout(() => goalLoop(), 1500);
   });
 
   // ─── Smart Chat ─────────────────────────────────────────────────────────
@@ -133,9 +146,15 @@ async function main() {
       switch (cmd) {
         case 'stop':   running = false; bot.chat('Stopped.'); break;
         case 'start':  running = true;  bot.chat('Running.'); break;
-        case 'status': bot.chat(`hp=${Math.round(bot.health)} food=${Math.round(bot.food)}`); break;
+        case 'status': bot.chat(`hp=${Math.round(bot.health)} food=${Math.round(bot.food)} busy=${goalBusy}`); break;
         case 'inv':    bot.chat(`Inv: ${bot.inventory.items().slice(0,8).map(i => `${i.name}x${i.count}`).join(', ')}`); break;
         case 'world':  bot.chat(`Known: ${world.summary()}`); break;
+        // FIX: added !follow command as direct shortcut bypassing LLM
+        case 'follow': {
+          brain.pushPlayerGoal({ goal: 'social', target: 'follow_trusted', reason: `${username} asked` });
+          bot.chat(`Following you, ${username}!`);
+          break;
+        }
         default:       bot.chat(`Unknown: ${cmd}`);
       }
       return;
@@ -173,7 +192,7 @@ async function main() {
   });
 
   // ─── Pick up items dropped near the bot ─────────────────────────────────
-  bot.on('playerCollect' as any, (collector: any, collected: any) => {
+  bot.on('playerCollect' as any, (collector: any, _collected: any) => {
     if (collector.username === bot.username) {
       log.info(`[pickup] Collected item`);
     }
