@@ -1,9 +1,9 @@
-import { Bot }            from 'mineflayer';
-import { OllamaClient }   from './llm';
+import { Bot } from 'mineflayer';
+import { OllamaClient } from './llm';
 import { LearningMemory } from './memory/learning';
-import { TrustMemory }    from './memory/trust';
-import { WorldMemory }    from './memory/world';
-import { Goal }           from './executor';
+import { TrustMemory } from './memory/trust';
+import { WorldMemory } from './memory/world';
+import { Goal } from './executor';
 import { getPhase, STRATEGIES } from './data/strategies';
 import { hasItem, hasAny, countItem } from './data/items';
 import { WOOD_BLOCKS } from './data/blocks';
@@ -61,7 +61,7 @@ function canSleep(bot: Bot, world: WorldMemory): boolean {
 
 // ─── Inventory helpers (WOOD-TYPE AGNOSTIC) ──────────────────────────────────
 
-function inv(bot: Bot, name: string): boolean  { return hasItem(bot, name); }
+function inv(bot: Bot, name: string): boolean { return hasItem(bot, name); }
 function invAny(bot: Bot, names: string[]): boolean { return hasAny(bot, names); }
 function count(bot: Bot, name: string): number { return countItem(bot, name); }
 
@@ -92,9 +92,9 @@ function totalPlanksCount(bot: Bot): number {
 function bestPickaxeTier(bot: Bot): number {
   const items = bot.inventory.items().map(i => i.name);
   if (items.some(n => n === 'diamond_pickaxe' || n === 'netherite_pickaxe')) return 3;
-  if (items.some(n => n === 'iron_pickaxe'))    return 2;
-  if (items.some(n => n === 'stone_pickaxe'))   return 1;
-  if (items.some(n => n.includes('pickaxe')))   return 0;
+  if (items.some(n => n === 'iron_pickaxe')) return 2;
+  if (items.some(n => n === 'stone_pickaxe')) return 1;
+  if (items.some(n => n.includes('pickaxe'))) return 0;
   return -1; // No pickaxe at all
 }
 
@@ -105,18 +105,18 @@ function hasSword(bot: Bot): boolean {
 function bestSwordTier(bot: Bot): number {
   const items = bot.inventory.items().map(i => i.name);
   if (items.some(n => n === 'diamond_sword' || n === 'netherite_sword')) return 3;
-  if (items.some(n => n === 'iron_sword'))    return 2;
-  if (items.some(n => n === 'stone_sword'))   return 1;
-  if (items.some(n => n.includes('sword')))   return 0;
+  if (items.some(n => n === 'iron_sword')) return 2;
+  if (items.some(n => n === 'stone_sword')) return 1;
+  if (items.some(n => n.includes('sword'))) return 0;
   return -1;
 }
 
 function hasFullIronArmor(bot: Bot): boolean {
-  return ['iron_helmet','iron_chestplate','iron_leggings','iron_boots'].every(p => inv(bot, p));
+  return ['iron_helmet', 'iron_chestplate', 'iron_leggings', 'iron_boots'].every(p => inv(bot, p));
 }
 
 function missingIronArmorPiece(bot: Bot): string | null {
-  for (const p of ['iron_chestplate','iron_leggings','iron_boots','iron_helmet']) {
+  for (const p of ['iron_chestplate', 'iron_leggings', 'iron_boots', 'iron_helmet']) {
     if (!inv(bot, p)) return p;
   }
   return null;
@@ -138,15 +138,15 @@ function hasUnequippedArmor(bot: Bot): boolean {
   }
   return bot.inventory.items().some(i =>
     (i.name.includes('helmet') || i.name.includes('chestplate') ||
-     i.name.includes('leggings') || i.name.includes('boots')) &&
+      i.name.includes('leggings') || i.name.includes('boots')) &&
     !equipped.has(i.type)
   );
 }
 
 function hasFood(bot: Bot): boolean {
   return invAny(bot, [
-    'bread','golden_carrot','golden_apple','cooked_beef','cooked_chicken',
-    'cooked_porkchop','cooked_mutton','carrot','apple','baked_potato','cooked_rabbit',
+    'bread', 'golden_carrot', 'golden_apple', 'cooked_beef', 'cooked_chicken',
+    'cooked_porkchop', 'cooked_mutton', 'carrot', 'apple', 'baked_potato', 'cooked_rabbit',
   ]);
 }
 
@@ -174,9 +174,9 @@ function detectPhase(bot: Bot): Phase {
 
 interface FailRecord { ts: number; goal: string; target: string }
 
-const LOOP_WINDOW_MS   = 120_000;
-const LOOP_THRESHOLD   = 3;
-const SUPPRESS_MS      = 90_000;
+const LOOP_WINDOW_MS = 120_000;
+const LOOP_THRESHOLD = 3;
+const SUPPRESS_MS = 90_000;
 const FLEE_SAFE_COOLDOWN_MS = 30_000;
 
 // ─── Brain ────────────────────────────────────────────────────────────────────
@@ -191,13 +191,13 @@ export class Brain {
   private playerGoals: Goal[] = [];
 
   constructor(
-    private bot:      Bot,
-    private llm:      OllamaClient,
+    private bot: Bot,
+    private llm: OllamaClient,
     private learning: LearningMemory,
-    private trust:    TrustMemory,
-    private world:    WorldMemory,
+    private trust: TrustMemory,
+    private world: WorldMemory,
   ) {
-    this.currentPhase  = 'early_game';
+    this.currentPhase = 'early_game';
     this.strategyQueue = [...(STRATEGIES.early_game ?? [])];
   }
 
@@ -212,6 +212,14 @@ export class Brain {
       if (goal === 'survive' && target === 'flee' && reason.includes('safe'))
         this.fleeSafeUntil = Date.now() + FLEE_SAFE_COOLDOWN_MS;
       this.suppressed.delete(key);
+
+      // If we just gathered wood, un-suppress everything that depends on it
+      if (goal === 'gather' && target === 'wood') {
+        this.suppressed.delete('craft:crafting_table');
+        this.suppressed.delete('craft:wooden_pickaxe');
+        this.suppressed.delete('craft:wooden_sword');
+        this.suppressed.delete('craft:wooden_axe');
+      }
       return;
     }
     const now = Date.now();
@@ -238,7 +246,7 @@ export class Brain {
     const phase = detectPhase(this.bot);
     if (phase !== this.currentPhase) {
       log.brain(`[phase] ${this.currentPhase} → ${phase}`);
-      this.currentPhase  = phase;
+      this.currentPhase = phase;
       this.strategyQueue = [...(STRATEGIES[phase] ?? [])];
     }
 
@@ -286,7 +294,7 @@ export class Brain {
   // ── Deterministic — INVENTORY AWARE ───────────────────────────────────────
 
   private deterministicGoal(): Goal | null {
-    const hp   = this.bot.health;
+    const hp = this.bot.health;
     const food = this.bot.food;
 
     // ── 0. Equip armor if we have unequipped pieces ──
@@ -330,8 +338,14 @@ export class Brain {
       return { goal: 'gather', target: 'wood', reason: 'no wood at all' };
 
     // ── 5. Crafting table ──
-    if (!inv(this.bot, 'crafting_table') && !this.world.knows('crafting_table'))
-      return { goal: 'craft', target: 'crafting_table', reason: 'need crafting table' };
+    if (!inv(this.bot, 'crafting_table') && !this.world.knows('crafting_table')) {
+      // Need 4 planks = 1 log minimum
+      if (hasAnyLogs(this.bot) || totalPlanksCount(this.bot) >= 4) {
+        return { goal: 'craft', target: 'crafting_table', reason: 'need crafting table' };
+      }
+      // No materials — gather wood first
+      return { goal: 'gather', target: 'wood', reason: 'need logs for crafting table' };
+    }
 
     // ── 6. Pickaxe — ONLY if we don't have one at all ──
     if (bestPickaxeTier(this.bot) < 0) {
@@ -407,14 +421,14 @@ export class Brain {
       // Tool crafting: skip if we already have same or better tier
       if (goal.target.includes('pickaxe')) {
         const tier = goal.target.startsWith('wooden') ? 0 :
-                     goal.target.startsWith('stone')  ? 1 :
-                     goal.target.startsWith('iron')   ? 2 : 3;
+          goal.target.startsWith('stone') ? 1 :
+            goal.target.startsWith('iron') ? 2 : 3;
         return bestPickaxeTier(this.bot) >= tier;
       }
       if (goal.target.includes('sword')) {
         const tier = goal.target.startsWith('wooden') ? 0 :
-                     goal.target.startsWith('stone')  ? 1 :
-                     goal.target.startsWith('iron')   ? 2 : 3;
+          goal.target.startsWith('stone') ? 1 :
+            goal.target.startsWith('iron') ? 2 : 3;
         return bestSwordTier(this.bot) >= tier;
       }
       if (goal.target.includes('axe')) {
@@ -439,11 +453,34 @@ export class Brain {
 
   private canAttempt(goal: Goal): boolean {
     if (goal.goal === 'gather') {
-      if (goal.target === 'stone')   return bestPickaxeTier(this.bot) >= 0;
-      if (goal.target === 'coal')    return bestPickaxeTier(this.bot) >= 0;
-      if (goal.target === 'iron')    return bestPickaxeTier(this.bot) >= 1;
+      if (goal.target === 'stone') return bestPickaxeTier(this.bot) >= 0;
+      if (goal.target === 'coal') return bestPickaxeTier(this.bot) >= 0;
+      if (goal.target === 'iron') return bestPickaxeTier(this.bot) >= 1;
       if (goal.target === 'diamond') return bestPickaxeTier(this.bot) >= 2;
     }
+
+    if (goal.goal === 'craft') {
+      const logs = totalLogCount(this.bot);
+      const planks = totalPlanksCount(this.bot);
+      const cob = this.bot.inventory.items()
+        .filter(i => i.name === 'cobblestone').reduce((s, i) => s + i.count, 0);
+
+      // These only need logs/planks (2×2 grid, no table required)
+      if (goal.target === 'crafting_table') return logs >= 1 || planks >= 4;
+      if (goal.target === 'wooden_planks') return logs >= 1;
+
+      // Everything else needs a crafting table AND materials
+      const hasCraftingTable = inv(this.bot, 'crafting_table') || this.world.knows('crafting_table');
+      if (!hasCraftingTable) return false;
+
+      if (goal.target === 'wooden_pickaxe') return logs >= 1 || planks >= 2;
+      if (goal.target === 'wooden_axe') return logs >= 1 || planks >= 3;
+      if (goal.target === 'wooden_sword') return logs >= 1 || planks >= 2;
+      if (goal.target === 'stone_pickaxe') return cob >= 3 && (planks >= 2 || logs >= 1);
+      if (goal.target === 'stone_sword') return cob >= 2 && (planks >= 1 || logs >= 1);
+      if (goal.target === 'furnace') return cob >= 8;
+    }
+
     return true;
   }
 
@@ -476,7 +513,7 @@ export class Brain {
 
     const raw = await this.llm.chat([
       { role: 'system', content: SYSTEM },
-      { role: 'user',   content: prompt },
+      { role: 'user', content: prompt },
     ], 'json');
     const clean = raw.replace(/```json|```/g, '').trim();
     const parsed = JSON.parse(clean) as Goal;
@@ -484,7 +521,7 @@ export class Brain {
     parsed.reason = parsed.reason ?? '';
 
     // Validate goal type
-    const validGoals = new Set(['survive','gather','craft','smelt','hunt','explore','build','combat','social']);
+    const validGoals = new Set(['survive', 'gather', 'craft', 'smelt', 'hunt', 'explore', 'build', 'combat', 'social']);
     if (!validGoals.has(parsed.goal)) throw new Error(`invalid goal: ${parsed.goal}`);
 
     return parsed;
@@ -493,14 +530,34 @@ export class Brain {
   // ── Fallback ─────────────────────────────────────────────────────────────
 
   private fallback(): Goal {
+    // If we have literally nothing, gathering wood is always the answer
+    if (!hasAnyLogs(this.bot) && !hasAnyPlanks(this.bot)) {
+      if (!this.isSuppressed('gather', 'wood')) {
+        log.brain(`[fallback] no materials — gather wood`);
+        return { goal: 'gather', target: 'wood', reason: 'need logs' };
+      }
+    }
+
+    // Try village if we discovered one and are stuck
+    if (this.world.knows('village') && !this.isSuppressed('explore', 'village')) {
+      log.brain(`[fallback] heading to known village`);
+      return { goal: 'explore', target: 'village', reason: 'use village resources' };
+    }
+
     const queue = STRATEGIES[this.currentPhase] ?? [];
-    const unachieved = queue.filter(g => !this.alreadyAchieved(g) && !this.isSuppressed(g.goal, g.target));
+    const unachieved = queue.filter(g =>
+      !this.alreadyAchieved(g) &&
+      !this.isSuppressed(g.goal, g.target) &&
+      this.canAttempt(g)  // <-- ADD THIS — was missing before
+    );
+
     if (unachieved.length > 0) {
       this.strategyQueue = [...unachieved];
       const next = this.strategyQueue.shift()!;
       log.brain(`[fallback] reset queue → ${next.goal}(${next.target})`);
       return next;
     }
+
     log.brain(`[fallback] exploring`);
     return { goal: 'explore', target: 'any', reason: 'roaming' };
   }

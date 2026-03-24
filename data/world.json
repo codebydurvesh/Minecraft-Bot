@@ -1,66 +1,13 @@
 {
-  "chest": [
-    {
-      "name": "chest",
-      "pos": {
-        "x": -1054,
-        "y": 64,
-        "z": -920
-      },
-      "timestamp": 1774365948979
-    }
-  ],
-  "crafting_table": [
-    {
-      "name": "crafting_table",
-      "pos": {
-        "x": -1060,
-        "y": 64,
-        "z": -913
-      },
-      "timestamp": 1774365949045
-    },
-    {
-      "name": "crafting_table",
-      "pos": {
-        "x": -1038,
-        "y": 64,
-        "z": -915
-      },
-      "timestamp": 1774366228569
-    }
-  ],
-  "smithing_table": [
-    {
-      "name": "smithing_table",
-      "pos": {
-        "x": -1060,
-        "y": 64,
-        "z": -912
-      },
-      "timestamp": 1774365949086
-    }
-  ],
   "bed": [
     {
       "name": "bed",
       "pos": {
-        "x": -1065,
-        "y": 65,
-        "z": -908
+        "x": -8553,
+        "y": 83,
+        "z": 2998
       },
-      "timestamp": 1774365949156
-    }
-  ],
-  "village": [
-    {
-      "name": "village",
-      "pos": {
-        "x": -1037,
-        "y": 64,
-        "z": -915
-      },
-      "timestamp": 1774366089730
+      "timestamp": 1774371876895
     }
   ]
 }
